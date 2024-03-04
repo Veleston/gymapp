@@ -6,7 +6,7 @@ import TargetImage from '../assets/icons/target.png';
 import EquipmentImage from '../assets/icons/equipment.png';
 
 const Detail = ({ exerciseDetail }) => {
-    const { bodyPart, gifUrl, name, target, equipment } = exerciseDetail;
+    const { bodyPart, gifUrl, name, target, equipment, instructions } = exerciseDetail;
   
     const extraDetail = [
       {
@@ -31,10 +31,7 @@ const Detail = ({ exerciseDetail }) => {
             {name}
           </Typography>
           <Typography sx={{ fontSize: { lg: '24px', xs: '18px' } }} color="#4F4C4C">
-            Exercises keep you strong.{' '}
-            <span style={{ textTransform: 'capitalize' }}>{name}</span> is one
-            of the best <br /> exercises to target your {target}. It will help you improve your{' '}
-            <br /> mood and gain energy.
+           {instructions}
           </Typography>
           {extraDetail?.map((item) => (
             <Stack key={item.name} direction="row" gap="24px" alignItems="center">
